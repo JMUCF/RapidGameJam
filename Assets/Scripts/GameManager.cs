@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Header("UI")]
     public TMP_Text scoreText;
+    public TMP_Text speedText;
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
         score += gameSpeed * Time.deltaTime;
 
         scoreText.text = Mathf.FloorToInt(score).ToString();
+        speedText.text = Mathf.FloorToInt(gameSpeed).ToString();
     }
 
     private IEnumerator ChangeWind()
