@@ -973,7 +973,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1753,6 +1753,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapSection: {fileID: 475015407776680320, guid: f41c7193500c7fc48a5c0e4af0b30895, type: 3}
+  obstacle: {fileID: 5873098237506567503, guid: 3a077f38b3b2b0f4388866571643b1ff, type: 3}
   moveSpeed: 5
   sprintSpeed: 10
   playerWind: 0
@@ -1820,6 +1821,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameSpeed: 5
   score: 0
+  isDead: 0
   wind: 0
   windChangeInterval: 8
   player: {fileID: 1699937274}
@@ -1962,7 +1964,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -50}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 30, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

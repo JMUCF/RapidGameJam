@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("Stats")]
     public float gameSpeed;
     public float score;
+    public bool isDead = false;
 
     [Header("Wind Settings")]
     public float wind;
@@ -23,16 +24,21 @@ public class GameManager : MonoBehaviour
     }
     void Update()
     {
-        if (player.windDiff <= 5)
-            gameSpeed = 20;
-        else if (player.windDiff > 5 && player.windDiff < 20)
-            gameSpeed = 12;
-        else
-            gameSpeed = 5;
-        score += gameSpeed * Time.deltaTime;
+        if (isDead == false)
+        {
+            if (player.windDiff <= 5)
+                gameSpeed = 20;
+            else if (player.windDiff > 5 && player.windDiff < 20)
+                gameSpeed = 12;
+            else
+                gameSpeed = 5;
+            score += gameSpeed * Time.deltaTime;
 
-        scoreText.text = Mathf.FloorToInt(score).ToString();
-        speedText.text = Mathf.FloorToInt(gameSpeed).ToString();
+            scoreText.text = Mathf.FloorToInt(score).ToString();
+            speedText.text = Mathf.FloorToInt(gameSpeed).ToString();
+        }
+       if (isDead == true)
+            gameSpeed = 0;
     }
 
     private IEnumerator ChangeWind()

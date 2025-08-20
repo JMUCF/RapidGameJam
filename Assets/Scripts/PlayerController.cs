@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Map gen")]
     public GameObject mapSection;
+    public GameObject obstacle;
     private GameManager gm;
 
     [Header("Movement")]
@@ -49,6 +51,10 @@ public class PlayerController : MonoBehaviour
         {
             // Spawn new section exactly after the last one
             Instantiate(mapSection, new Vector3(0, 0, 42), Quaternion.identity); //dont like this way of spawning stuff in but we only have 4 hours
+
+            Instantiate(obstacle, new Vector3(Random.Range(-14f, 14f), 0.5f, Random.Range(37f, 56f)), Quaternion.identity);
+            Instantiate(obstacle, new Vector3(Random.Range(-14f, 14f), 0.5f, Random.Range(37f, 56f)), Quaternion.identity);
+            Instantiate(obstacle, new Vector3(Random.Range(-14f, 14f), 0.5f, Random.Range(37f, 56f)), Quaternion.identity);
         }
     }
 }
